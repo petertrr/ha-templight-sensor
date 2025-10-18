@@ -6,8 +6,7 @@ from typing import Any, Callable
 
 from homeassistant.const import (
     PERCENTAGE,
-    TEMP_KELVIN,
-    DEGREE,
+    UnitOfTemperature,
 )
 from homeassistant.components.sensor import (
     SensorEntity,
@@ -247,7 +246,7 @@ class ColorTemperatureSensor(TempLightSensorBase):
         )
 
         # SensorEntity
-        self._attr_native_unit_of_measurement = TEMP_KELVIN
+        self._attr_native_unit_of_measurement = UnitOfTemperature.KELVIN
         self._attr_state_class = SensorStateClass.MEASUREMENT
 
         # Force update on setup.
@@ -343,7 +342,7 @@ class ColorHueSensor(TempLightSensorBase):
         )
 
         # SensorEntity
-        self._attr_native_unit_of_measurement = DEGREE
+        self._attr_native_unit_of_measurement = "°"
         self._attr_state_class = SensorStateClass.MEASUREMENT
 
         # Force update on setup.
